@@ -16,6 +16,10 @@
 
 #include <QStringList>
 
+XXX
+XXX Boost::Python deprecated file
+XXX
+
 namespace Calamares
 {
 class GlobalStorage;

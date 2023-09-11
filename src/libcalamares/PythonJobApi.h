@@ -11,6 +11,11 @@
 #ifndef PYTHONJOBAPI_H
 #define PYTHONJOBAPI_H
 
+XXX
+XXX Boost::Python deprecated file
+XXX
+
+
 #include "utils/BoostPython.h"
 
 #include <qglobal.h>  // For qreal

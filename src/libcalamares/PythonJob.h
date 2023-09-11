@@ -11,6 +11,11 @@
 #ifndef CALAMARES_PYTHONJOB_H
 #define CALAMARES_PYTHONJOB_H
 
+XXX
+XXX Boost::Python deprecated file
+XXX
+
+
 #include "Job.h"
 #include "modulesystem/InstanceKey.h"
 

@@ -8,6 +8,11 @@
  *
  */
 
+XXX
+XXX Boost::Python deprecated file
+XXX
+
+
 #include "PythonJobApi.h"
 
 #include "GlobalStorage.h"
