@@ -80,7 +80,7 @@ option(INSTALL_POLKIT "Install Polkit configuration" ON)
 option(INSTALL_COMPLETION "Install shell completions" OFF)
 # When adding WITH_* that affects the ABI offered by libcalamares,
 # also update libcalamares/CalamaresConfig.h.in
-option(WITH_PYTHON "Enable Python modules API (requires Boost.Python)." ON)
+option(WITH_PYTHON "Enable Python modules API." ON)
 option(WITH_QML "Enable QML UI options." ON)
 option(WITH_QT6 "Use Qt6 instead of Qt5" OFF)
 #
@@ -442,19 +442,8 @@ else()
 endif()
 add_feature_info(yaml-schema BUILD_SCHEMA_TESTING "Validate YAML (config files) with schema.${_schema_explanation}")
 
-if(Python_Development_FOUND)
-    find_package(boost_python)
-    if(NOT TARGET Boost::python)
-        find_package(Boost ${BOOSTPYTHON_VERSION} COMPONENTS python)
-        set_package_properties(Boost PROPERTIES PURPOSE "Boost.Python is used for Python job modules.")
-    else()
-        message(STATUS "Found boost_python with target Boost::python")
-        set(Boost_FOUND ON)
-    endif()
-endif()
-
-if(NOT Python_Development_FOUND OR NOT Boost_FOUND)
-    message(STATUS "Disabling Boost::Python modules")
+if(NOT Python_Development_FOUND)
+    message(STATUS "Disabling Python modules")
     set(WITH_PYTHON OFF)
 endif()
 
@@ -591,6 +580,9 @@ include(GNUInstallDirs)
 set(Calamares_LIBRARIES calamares)
 
 add_subdirectory(3rdparty/kdsingleapplication)
+if(WITH_PYTHON)
+    add_subdirectory(3rdparty/pybind11)
+endif()
 add_subdirectory(src)
 
 add_feature_info(Python ${WITH_PYTHON} "Python job modules")
