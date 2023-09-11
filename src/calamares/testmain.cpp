@@ -32,7 +32,7 @@
 // - Python support
 // - QML support
 #ifdef WITH_PYTHON
-#include "PythonJob.h"
+#include "python/PythonJob.h"
 #endif
 #ifdef WITH_QML
 #include "utils/Qml.h"
@@ -472,7 +472,7 @@ main( int argc, char* argv[] )
 #ifdef WITH_PYTHON
     if ( module.m_pythonInjection )
     {
-        Calamares::PythonJob::setInjectedPreScript( pythonPreScript );
+        Calamares::Python::Job::setInjectedPreScript( pythonPreScript );
     }
 #endif
 #ifdef WITH_QML

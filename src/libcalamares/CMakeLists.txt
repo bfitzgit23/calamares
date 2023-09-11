@@ -115,7 +115,7 @@ endif()
 #
 #
 if(WITH_PYTHON)
-    target_sources(calamares PRIVATE python/Api.cpp)
+    target_sources(calamares PRIVATE python/Api.cpp python/PythonJob.cpp)
     target_link_libraries(calamares PRIVATE Python::Python pybind11::headers)
 endif()
 
