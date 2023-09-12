@@ -28,6 +28,9 @@ This release contains contributions from (alphabetically by first name):
  - C++ namespaces have been shuffled around and `CalamaresUtils` has been
    retired. This has an effect on all C++ plugins, since this is neither
    a binary- nor source-compatible change.
+ - Boost::Python is no longer a dependency, Calamares uses a bundled copy
+   of pybind11 instead. This speeds up compilation and reducese the
+   dependency tree a great deal.
 
 ## Modules ##
  - *keyboard* module can now be explicitly configured to use X11 keyboard

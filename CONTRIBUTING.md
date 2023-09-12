@@ -112,7 +112,6 @@ Main:
 * KDE extra-cmake-modules >= 5.78 (recommended; required for some modules;
   required for some tests)
 * Python >= 3.6 (required for some modules)
-* Boost.Python >= 1.72.0 (required for some modules)
 
 Individual modules may have their own requirements;
 these are listed in CMake output.
